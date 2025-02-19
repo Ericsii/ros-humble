@@ -1,0 +1,25 @@
+diff --git a/include/grid_map_core/BufferRegion.hpp b/include/grid_map_core/BufferRegion.hpp
+index fbe2d20..91a2d9b 100644
+--- a/include/grid_map_core/BufferRegion.hpp
++++ b/include/grid_map_core/BufferRegion.hpp
+@@ -40,6 +40,7 @@ public:
+     const Index & startIndex, const Size & size,
+     const BufferRegion::Quadrant & quadrant);
+   virtual ~BufferRegion() = default;
++  BufferRegion(const BufferRegion & other) = default;
+ 
+   const Index & getStartIndex() const;
+   void setStartIndex(const Index & startIndex);
+diff --git a/include/grid_map_core/Polygon.hpp b/include/grid_map_core/Polygon.hpp
+index 9d7ad27..924412d 100644
+--- a/include/grid_map_core/Polygon.hpp
++++ b/include/grid_map_core/Polygon.hpp
+@@ -45,6 +45,8 @@ public:
+    */
+   virtual ~Polygon() = default;
+ 
++  Polygon(const Polygon & other) = default;
++
+   /*!
+    * Check if point is inside polygon.
+    * @param point the point to be checked.
